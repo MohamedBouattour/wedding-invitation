@@ -1,0 +1,272 @@
+/* General Styles */
+:root {
+  --primary-color: #d4af37; /* Gold */
+  --secondary-color: #f5f5dc; /* Ivory/Cream */
+  --text-color: #4a3728; /* Dark Brown/Coffee */
+  --bg-overlay: rgba(255, 255, 255, 0.7);
+  --gold-gradient: linear-gradient(
+    135deg,
+    #bf953f,
+    #fcf6ba,
+    #b38728,
+    #fbf5b7,
+    #aa771c
+  );
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Playfair Display", serif;
+  background: url("assets/wedding_background.png") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+[lang="ar"] {
+  font-family: "Amiri", serif;
+  direction: rtl;
+}
+
+/* Container */
+.container {
+  padding: 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Card Styling */
+.invitation-card {
+  background: var(--bg-overlay);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 3px solid transparent;
+  border-image: var(--gold-gradient) 1;
+  padding: 4rem 2rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1.5s ease-out;
+  border-radius: 8px; /* Simplified for border-image compatibility or using SVG */
+}
+
+/* Animated Border-like effect */
+.invitation-card::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border: 1px solid var(--primary-color);
+  pointer-events: none;
+}
+
+/* Typography */
+.invitation-header {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary-color);
+  opacity: 0.9;
+}
+
+.names {
+  font-family: "Dancing Script", cursive;
+  font-size: 4.5rem;
+  margin: 1.5rem 0;
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+[lang="ar"] .names {
+  font-size: 5.5rem;
+  font-family: "Amiri", serif;
+  line-height: 1.4;
+}
+
+.invitation-message {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.details {
+  font-size: 1.1rem;
+  margin: 2rem 0;
+  font-weight: 500;
+}
+
+.location-box {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 12px;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.location-box:hover {
+  transform: translateY(-5px);
+}
+
+.location-box i {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+/* Countdown Section */
+.countdown-container {
+  margin-top: 3rem;
+}
+
+.countdown-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.countdown-timer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.timer-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  min-width: 80px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.timer-item .number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  display: block;
+}
+
+.timer-item .label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #888;
+}
+
+/* Language Switcher */
+.lang-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.lang-btn {
+  background: white;
+  border: 1px solid var(--primary-color);
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.lang-btn.active {
+  background: var(--primary-color);
+  color: white;
+}
+
+.lang-btn:hover {
+  background: var(--gold-gradient);
+  color: white;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .names {
+    font-size: 3rem;
+  }
+  [lang="ar"] .names {
+    font-size: 4rem;
+  }
+  .invitation-card {
+    padding: 3rem 1rem;
+  }
+  .countdown-timer {
+    gap: 0.8rem;
+  }
+  .timer-item {
+    min-width: 60px;
+    padding: 0.8rem 0.4rem;
+  }
+  .timer-item .number {
+    font-size: 1.5rem;
+  }
+}
+
+/* Floating ornaments */
+.ornament {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.top-left {
+  top: 20px;
+  left: 20px;
+  border-top: 2px solid var(--primary-color);
+  border-left: 2px solid var(--primary-color);
+}
+.top-right {
+  top: 20px;
+  right: 20px;
+  border-top: 2px solid var(--primary-color);
+  border-right: 2px solid var(--primary-color);
+}
+.bottom-left {
+  bottom: 20px;
+  left: 20px;
+  border-bottom: 2px solid var(--primary-color);
+  border-left: 2px solid var(--primary-color);
+}
+.bottom-right {
+  bottom: 20px;
+  right: 20px;
+  border-bottom: 2px solid var(--primary-color);
+  border-right: 2px solid var(--primary-color);
+}

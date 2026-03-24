@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohamed & Abir Wedding Invitation</title>
+
+    <!-- Meta Tags -->
+    <meta
+      name="description"
+      content="Wedding invitation for Mohamed and Abir Drira - March 28, 2026"
+    />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&family=Dancing+Script:wght@400;700&family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body dir="rtl">
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+      <button class="lang-btn active" data-lang="ar">العربية</button>
+      <button class="lang-btn" data-lang="en">English</button>
+      <button class="lang-btn" data-lang="fr">Français</button>
+    </div>
+
+    <div class="container">
+      <div class="invitation-card">
+        <!-- Corner Ornaments -->
+        <div class="ornament top-left"></div>
+        <div class="ornament top-right"></div>
+        <div class="ornament bottom-left"></div>
+        <div class="ornament bottom-right"></div>
+
+        <header id="header" class="invitation-header">
+          الحمد لله والصلاة والسلام
+        </header>
+
+        <p
+          id="sub-header"
+          style="font-style: italic; opacity: 0.8; margin-bottom: 1rem"
+        >
+          بعد تقديم أحر التهاني،
+        </p>
+
+        <section id="invitation-text" class="invitation-message">
+          يتشرف السيد جمال بوعتور وحرمه السيدة أميرة اللوز بدعوتكم لحضور حفل
+          زفاف ابنهما
+        </section>
+
+        <div class="names">
+          <span id="groom-name">محمد</span>
+          <span
+            id="with-text"
+            style="
+              font-size: 1.5rem;
+              display: block;
+              filter: none;
+              -webkit-text-fill-color: initial;
+              background: none;
+              color: #4a3728;
+            "
+            >مع الآنسة</span
+          >
+          <span id="bride-name">عبير دريرة</span>
+        </div>
+
+        <div id="details-text" class="details">
+          وذلك بعون الله يوم السبت 28 مارس 2026 على الساعة الثالثة بعد الزوال،
+          بقاعة الأفراح شهرزاد، طريق قرمدة كلم 4.5 - صفاقس.
+        </div>
+
+        <div class="location-box">
+          <i class="fa-solid fa-location-dot fa-2x"></i>
+          <p id="location-text">قاعة الأفراح شهرزاد - صفاقس</p>
+          <a
+            href="https://www.google.com/maps/search/Salle+des+fêtes+Shahrazad+Gremda+Km+4.5+Sfax"
+            target="_blank"
+            style="
+              color: var(--primary-color);
+              text-decoration: none;
+              font-size: 0.9rem;
+              margin-top: 5px;
+              display: block;
+            "
+            >View on Maps</a
+          >
+        </div>
+
+        <footer id="footer-text" style="margin-top: 3rem; font-style: italic">
+          نتمنى لكم مزيداً من الأفراح والمسرات. دامت الأفراح.
+        </footer>
+
+        <!-- Countdown Timer -->
+        <div class="countdown-container">
+          <div id="countdown-title" class="countdown-title">
+            العد التنازلي للحفل
+          </div>
+          <div id="countdown-timer" class="countdown-timer">
+            <div class="timer-item">
+              <span id="days" class="number">00</span>
+              <span id="label-days" class="label">أيام</span>
+            </div>
+            <div class="timer-item">
+              <span id="hours" class="number">00</span>
+              <span id="label-hours" class="label">ساعات</span>
+            </div>
+            <div class="timer-item">
+              <span id="minutes" class="number">00</span>
+              <span id="label-minutes" class="label">دقائق</span>
+            </div>
+            <div class="timer-item">
+              <span id="seconds" class="number">00</span>
+              <span id="label-seconds" class="label">ثوانٍ</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+  </body>
+</html>
