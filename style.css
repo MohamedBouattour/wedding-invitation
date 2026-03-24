@@ -1,272 +1,258 @@
 /* General Styles */
 :root {
-  --primary-color: #d4af37; /* Gold */
-  --secondary-color: #f5f5dc; /* Ivory/Cream */
-  --text-color: #4a3728; /* Dark Brown/Coffee */
-  --bg-overlay: rgba(255, 255, 255, 0.7);
-  --gold-gradient: linear-gradient(
-    135deg,
-    #bf953f,
-    #fcf6ba,
-    #b38728,
-    #fbf5b7,
-    #aa771c
-  );
+    --primary-color: #d4af37; /* Gold */
+    --secondary-color: #f5f5dc; /* Ivory/Cream */
+    --text-color: #4a3728; /* Dark Brown/Coffee */
+    --bg-overlay: rgba(255, 255, 255, 0.85);
+    --gold-gradient: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: "Playfair Display", serif;
-  background: url("assets/wedding_background.png") no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: var(--text-color);
-  overflow-x: hidden;
+    font-family: 'Playfair Display', serif;
+    background: url('assets/wedding_background.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    overflow-x: hidden;
+    padding: 20px;
 }
 
 [lang="ar"] {
-  font-family: "Amiri", serif;
-  direction: rtl;
+    font-family: 'Amiri', serif;
 }
 
 /* Container */
 .container {
-  padding: 2rem;
-  width: 100%;
-  max-width: 900px;
+    width: 100%;
+    max-width: 900px;
+    z-index: 1;
 }
 
 /* Card Styling */
 .invitation-card {
-  background: var(--bg-overlay);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 3px solid transparent;
-  border-image: var(--gold-gradient) 1;
-  padding: 4rem 2rem;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  animation: fadeIn 1.5s ease-out;
-  border-radius: 8px; /* Simplified for border-image compatibility or using SVG */
+    background: var(--bg-overlay);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 5rem 3rem;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    animation: fadeIn 1.5s ease-out;
+    border-radius: 4px;
 }
 
-/* Animated Border-like effect */
-.invitation-card::before {
-  content: "";
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  border: 1px solid var(--primary-color);
-  pointer-events: none;
+/* Inner Border */
+.invitation-card::after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 2px solid var(--primary-color);
+    pointer-events: none;
+    opacity: 0.6;
 }
 
 /* Typography */
 .invitation-header {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: var(--primary-color);
-  opacity: 0.9;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
-.names {
-  font-family: "Dancing Script", cursive;
-  font-size: 4.5rem;
-  margin: 1.5rem 0;
-  background: var(--gold-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1.2;
+.sub-header {
+    font-style: italic;
+    opacity: 0.8;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
 }
 
-[lang="ar"] .names {
-  font-size: 5.5rem;
-  font-family: "Amiri", serif;
-  line-height: 1.4;
+.names-container {
+    margin: 3rem 0;
+}
+
+.name-primary {
+    font-family: 'Dancing Script', cursive;
+    font-size: 5.5rem;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    line-height: 1.2;
+}
+
+[lang="ar"] .name-primary {
+    font-family: 'Amiri', serif;
+    font-size: 6.5rem;
+    font-weight: 700;
+}
+
+.with-text {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin: 1rem 0;
+    color: var(--text-color);
+    opacity: 0.7;
+}
+
+[lang="ar"] .with-text {
+    font-size: 2rem;
+    font-style: normal;
 }
 
 .invitation-message {
-  font-size: 1.3rem;
-  margin-bottom: 2.5rem;
-  line-height: 1.6;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+    font-size: 1.25rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .details {
-  font-size: 1.1rem;
-  margin: 2rem 0;
-  font-weight: 500;
+    font-size: 1.2rem;
+    margin: 2.5rem 0;
+    line-height: 1.6;
+    font-weight: 500;
 }
 
 .location-box {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background: rgba(212, 175, 55, 0.1);
-  border-radius: 12px;
-  display: inline-block;
-  transition: transform 0.3s ease;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    background: rgba(212, 175, 55, 0.05);
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    text-decoration: none;
+    color: inherit;
 }
 
 .location-box:hover {
-  transform: translateY(-5px);
+    transform: translateY(-3px);
+    background: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .location-box i {
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
+    color: var(--primary-color);
 }
 
 /* Countdown Section */
 .countdown-container {
-  margin-top: 3rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .countdown-title {
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 1.5rem;
-  color: var(--primary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 2rem;
+    color: var(--primary-color);
+    font-weight: 700;
 }
 
 .countdown-timer {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .timer-item {
-  background: white;
-  padding: 1rem;
-  border-radius: 12px;
-  min-width: 80px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .timer-item .number {
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--primary-color);
-  display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    font-family: 'Playfair Display', serif;
 }
 
 .timer-item .label {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  color: #888;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
 }
 
 /* Language Switcher */
 .lang-switcher {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  gap: 10px;
-  z-index: 1000;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    display: flex;
+    gap: 12px;
+    z-index: 1000;
 }
 
 .lang-btn {
-  background: white;
-  border: 1px solid var(--primary-color);
-  padding: 8px 15px;
-  border-radius: 20px;
-  cursor: pointer;
-  font-family: "Inter", sans-serif;
-  color: var(--text-color);
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: white;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 10px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .lang-btn.active {
-  background: var(--primary-color);
-  color: white;
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
 }
 
-.lang-btn:hover {
-  background: var(--gold-gradient);
-  color: white;
+.lang-btn:hover:not(.active) {
+    background: #fdfaf0;
+    border-color: var(--primary-color);
+}
+
+/* Ornaments */
+.ornament-img {
+    height: 60px;
+    width: auto;
+    margin: 1rem 0;
+    opacity: 0.8;
 }
 
 /* Animations */
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .names {
-    font-size: 3rem;
-  }
-  [lang="ar"] .names {
-    font-size: 4rem;
-  }
-  .invitation-card {
-    padding: 3rem 1rem;
-  }
-  .countdown-timer {
-    gap: 0.8rem;
-  }
-  .timer-item {
-    min-width: 60px;
-    padding: 0.8rem 0.4rem;
-  }
-  .timer-item .number {
-    font-size: 1.5rem;
-  }
-}
-
-/* Floating ornaments */
-.ornament {
-  position: absolute;
-  width: 60px;
-  height: 60px;
-  opacity: 0.6;
-  pointer-events: none;
-}
-
-.top-left {
-  top: 20px;
-  left: 20px;
-  border-top: 2px solid var(--primary-color);
-  border-left: 2px solid var(--primary-color);
-}
-.top-right {
-  top: 20px;
-  right: 20px;
-  border-top: 2px solid var(--primary-color);
-  border-right: 2px solid var(--primary-color);
-}
-.bottom-left {
-  bottom: 20px;
-  left: 20px;
-  border-bottom: 2px solid var(--primary-color);
-  border-left: 2px solid var(--primary-color);
-}
-.bottom-right {
-  bottom: 20px;
-  right: 20px;
-  border-bottom: 2px solid var(--primary-color);
-  border-right: 2px solid var(--primary-color);
+    .name-primary { font-size: 3.5rem; }
+    [lang="ar"] .name-primary { font-size: 4.5rem; }
+    .invitation-card { padding: 4rem 1.5rem; }
+    .countdown-timer { gap: 1rem; }
+    .timer-item .number { font-size: 1.8rem; }
+    .lang-switcher { top: 15px; right: 15px; }
 }
